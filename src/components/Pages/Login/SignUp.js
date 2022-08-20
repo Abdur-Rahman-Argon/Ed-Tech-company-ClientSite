@@ -7,7 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 
 import auth from "../../../firebase.init";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import SocialLogIn from "./SocialLogIn";
 
 const SignUp = () => {
@@ -15,6 +15,17 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth);
 
   const [updateProfile, updating, UpdatError] = useUpdateProfile(auth);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location?.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, from, navigate]);
 
   const {
     register,
@@ -134,3 +145,20 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+/*
+
+
+fetch(`/user/${email}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(user),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          console.log(result);
+        });
+
+*/
