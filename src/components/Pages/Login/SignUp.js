@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
+
+import auth from "../../../firebase.init";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import SocialLogIn from "./SocialLogIn";
+
 const SignUp = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+
+  const [updateProfile, updating, UpdatError] = useUpdateProfile(auth);
+
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname;
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, from, navigate]);
 
   const onSubmit = async (data) => {
     const displayName = data.name;
@@ -14,6 +38,11 @@ const SignUp = () => {
     const password = data.new_password;
     const confirmPassword = data.confirm_password;
     const user = { displayName, email };
+
+    if (password === confirmPassword) {
+      createUserWithEmailAndPassword(email, password);
+      await updateProfile(displayName);
+    }
 
     // console.log(data);
   };
@@ -105,6 +134,9 @@ const SignUp = () => {
         </div>
       </div>
       <div class="divider">OR</div>
+      <div>
+        <SocialLogIn></SocialLogIn>
+      </div>
     </div>
   );
 };

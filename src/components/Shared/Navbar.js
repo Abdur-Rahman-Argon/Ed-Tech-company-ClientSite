@@ -16,6 +16,15 @@ const Navbar = () => {
       <li>
         <Link to="/">About Us</Link>
       </li>
+      <li>
+        <Link to="/login">About Us</Link>
+      </li>
+      <li>
+        <button className="">Profile</button>
+      </li>
+      <li>
+        <button className="">LogOut</button>
+      </li>
     </>
   );
   return (
