@@ -6,7 +6,7 @@ import Home from "./components/Pages/Home/Home";
 
 function App() {
   return (
-    <div className="">
+    <div className="bg-no-repeat bg-cover bg-[url('https://i.ibb.co/txdkL8y/photo-1615715757401-f30e7b27b912.jpg')]">
       <Navbar></Navbar>
 
       <Routes>
