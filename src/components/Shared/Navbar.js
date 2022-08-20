@@ -45,10 +45,10 @@ const Navbar = () => {
     </>
   );
   return (
-    <div class="navbar border-b-[1px] py-0 border-gray-400 px-20">
-      <div class="navbar-start flex-1">
+    <div class="navbar border-b-[1px] py-0 border-gray-400 px-8 md:px-20">
+      <div class="navbar-start flex-1 ">
         <Link to="/">
-          <h1 className=" text-xl font-semibold title-style">
+          <h1 className=" text-xl font-semibold title-style w-60">
             Ed Tech Company
           </h1>
         </Link>

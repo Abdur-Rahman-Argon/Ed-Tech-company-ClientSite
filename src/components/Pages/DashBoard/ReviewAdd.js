@@ -7,6 +7,7 @@ import auth from "../../../firebase.init";
 const ReviewAdd = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
+
   const [currentRatings, setCurrentRatings] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
 
@@ -65,13 +66,13 @@ const ReviewAdd = () => {
       });
   };
   return (
-    <div className="8/ w-8/12 mx-auto">
+    <div className=" w-8/12 my-8 mx-auto">
       <h4 className="text-3xl font-bold text-gray-600">
         Please Write Your Review
       </h4>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="my-8">
-          <span className="  text-5xl flex gap-8">
+          <span className=" text-lg md:text-2xl lg:text-5xl flex gap-8">
             {ratings.map((r, index) => (
               <li key={index} className=" list-none">
                 <i
@@ -80,7 +81,7 @@ const ReviewAdd = () => {
                   onMouseLeave={() => handleMouseLave()}
                   class={` fa-star ${
                     (hoverValue || currentRatings) > index
-                      ? "text-green-700 fa-solid"
+                      ? "text-orange-500 fa-solid"
                       : "text-gray-500 fa-regular"
                   }    `}
                 ></i>
