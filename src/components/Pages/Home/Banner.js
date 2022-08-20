@@ -4,9 +4,7 @@ import banner from "../../../images/banner.jpg";
 const Banner = () => {
   return (
     <div>
-      <div
-        class={`pt-12 bg-no-repeat bg-cover bg-[url('https://images.unsplash.com/photo-1615715757401-f30e7b27b912?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxMTI1NDUzfHxlbnwwfHx8fA%3D%3D&w=1000&q=80')]`}
-      >
+      <div class={`pt-12 `}>
         <div class=" flex flex-col  justify-between items-center  lg:flex-row-reverse gap-6 lg:px-40  ">
           <div className="flex-1">
             <img
