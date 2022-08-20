@@ -1,7 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
+import SocialLogIn from "./SocialLogIn";
 
 const Login = () => {
+  const [signInWithEmailAndPassword, logUser, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
+  const [user] = useAuthState(auth);
+
   const {
     register,
     formState: { errors },
@@ -13,6 +25,7 @@ const Login = () => {
     const email = data.email;
     const password = data.password;
     console.log(data);
+    signInWithEmailAndPassword(email, password);
   };
 
   return (
@@ -51,6 +64,18 @@ const Login = () => {
         />
       </form>
       <div></div>
+      <div>
+        <p>
+          Don't have an account?
+          <Link to="/signup" className="text-lg mx-1 text-green-600">
+            Sign Up Now
+          </Link>
+        </p>
+      </div>
+      <div class="divider">OR</div>
+      <div>
+        <SocialLogIn></SocialLogIn>
+      </div>
     </div>
   );
 };

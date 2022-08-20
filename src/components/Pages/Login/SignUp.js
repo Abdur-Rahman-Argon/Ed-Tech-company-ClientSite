@@ -7,7 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 
 import auth from "../../../firebase.init";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SocialLogIn from "./SocialLogIn";
 
 const SignUp = () => {
@@ -22,22 +22,14 @@ const SignUp = () => {
     handleSubmit,
   } = useForm();
 
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location?.state?.from?.pathname;
-
-  useEffect(() => {
-    if (user) {
-      navigate(from, { replace: true });
-    }
-  }, [user, from, navigate]);
-
   const onSubmit = async (data) => {
     const displayName = data.name;
     const email = data.email;
     const password = data.new_password;
     const confirmPassword = data.confirm_password;
     const user = { displayName, email };
+
+    console.log(user);
 
     if (password === confirmPassword) {
       createUserWithEmailAndPassword(email, password);
