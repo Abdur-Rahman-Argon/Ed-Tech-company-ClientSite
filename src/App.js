@@ -6,6 +6,8 @@ import Home from "./components/Pages/Home/Home";
 import Login from "./components/Pages/Login/Login";
 import SignUp from "./components/Pages/Login/SignUp";
 import ReviewAdd from "./components/Pages/DashBoard/ReviewAdd";
+import ContactUs from "./components/Pages/Contact/ContactUs";
+import ServiceDetails from "./components/Pages/Home/ServiceDetails";
 
 function App() {
   return (
@@ -17,6 +19,11 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/reviewAdd" element={<ReviewAdd></ReviewAdd>}></Route>
+        <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
+        <Route
+          path="/serviceDetails"
+          element={<ServiceDetails></ServiceDetails>}
+        ></Route>
       </Routes>
 
       <Footer></Footer>

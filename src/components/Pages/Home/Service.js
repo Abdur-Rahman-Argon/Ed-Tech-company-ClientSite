@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Service = ({ img }) => {
   return (
@@ -14,7 +15,9 @@ const Service = ({ img }) => {
             Consequatur nobis atque laborum eveniet reiciendis laboriosam?
           </p>
           <div class=" flex justify-between">
-            <button class="btn btn-sm btn-success">see details</button>
+            <Link to="/serviceDetails" class="btn btn-sm btn-success">
+              see details
+            </Link>
             <button class="btn btn-sm btn-success">Add To Cart</button>
           </div>
         </div>
