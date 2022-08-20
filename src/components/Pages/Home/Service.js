@@ -15,7 +15,7 @@ const Service = ({ img }) => {
           </p>
           <div class=" flex justify-between">
             <button class="btn btn-sm btn-success">see details</button>
-            <button class="btn btn-sm btn-success">Buy now</button>
+            <button class="btn btn-sm btn-success">Add To Cart</button>
           </div>
         </div>
       </div>

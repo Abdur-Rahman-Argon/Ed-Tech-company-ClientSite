@@ -6,7 +6,7 @@ import {
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../../../firebase.init";
-import SocialLogIn from "./SocialLogin";
+import SocialLogIn from "./SocialLogIn";
 
 const Login = () => {
   const [signInWithEmailAndPassword, logUser, loading, error] =

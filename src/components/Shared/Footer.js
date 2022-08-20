@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className=" p-10 bg-base-200 text-base-content">
+    <div className=" p-10 bg-slate-700 text-gray-200">
       <footer class="footer justify-between">
         <div class="">
           <h1 className=" text-2xl font-semibold title-style">
@@ -15,12 +15,12 @@ const Footer = () => {
                 Abdur Rahman
               </span>
             </h1>
-            <h5 className=" text-[14px] my-[5px] font-semibold text-gray-700">
+            <h5 className=" text-[14px] my-[5px] font-semibold text-gray-200">
               Full Stack Web Developer
             </h5>
           </div>
           <div>
-            <ul className=" text-xs text-left font-semibold text-gray-800">
+            <ul className=" text-sm text-left font-semibold text-gray-200">
               <li className="mb-2">
                 <i class="fa-solid fa-phone mr-2"></i>
                 <span>+88 01763378457</span>

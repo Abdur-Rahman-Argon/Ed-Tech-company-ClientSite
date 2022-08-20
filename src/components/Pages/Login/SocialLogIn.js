@@ -7,18 +7,17 @@ const SocialLogIn = () => {
 
   const handleGoogleSignUp = async () => {
     signInWithGoogle();
-    // await console.log(gUser.user);
-    const displayName = await gUser.user.displayName;
-    const email = await gUser.user.email;
-    const photoURL = await gUser.user.photoURL;
+    const displayName = await gUser?.user?.displayName;
+    const email = await gUser?.user?.email;
+    const photoURL = await gUser?.user?.photoURL;
 
-    const user = {
-      displayName,
-      email,
-      photoURL,
-    };
+    // const user = {
+    //   displayName,
+    //   email,
+    //   photoURL,
+    // };
 
-    // console.log(user);
+    // console.log(user, gUser);
   };
 
   return (

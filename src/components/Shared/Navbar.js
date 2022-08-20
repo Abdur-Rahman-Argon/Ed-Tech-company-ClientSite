@@ -1,7 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+
+  const logout = () => {
+    signOut(auth);
+  };
+
   const navMenu = (
     <>
       <li>
@@ -11,26 +20,38 @@ const Navbar = () => {
         <Link to="/">Service</Link>
       </li>
       <li>
-        <Link to="/">Contact Us</Link>
+        <Link to="/">Dashboard</Link>
       </li>
       <li>
-        <Link to="/">About Us</Link>
+        <Link to="/">Contact</Link>
       </li>
-      <li>
-        <Link to="/login">About Us</Link>
-      </li>
-      <li>
-        <button className="">Profile</button>
-      </li>
-      <li>
-        <button className="">LogOut</button>
-      </li>
+
+      {user ? (
+        <>
+          {/* <li>
+            <button className="">{user.displayName}</button>
+          </li> */}
+          <li>
+            <button onClick={logout} className="">
+              LogOut
+            </button>
+          </li>
+        </>
+      ) : (
+        <li>
+          <Link to="/login">LogIn</Link>
+        </li>
+      )}
     </>
   );
   return (
-    <div class="navbar bg-gray-300 px-20">
-      <div class="navbar-start">
-        <h1 className=" text-xl font-semibold title-style"> Ed Tech Company</h1>
+    <div class="navbar border-b-[1px] py-0 border-gray-400 px-20">
+      <div class="navbar-start flex-1">
+        <Link to="/">
+          <h1 className=" text-xl font-semibold title-style">
+            Ed Tech Company
+          </h1>
+        </Link>
       </div>
       <div class="navbar-end hidden lg:flex">
         <ul class="menu menu-horizontal p-0 font-medium gap-4">{navMenu}</ul>
