@@ -45,38 +45,40 @@ const Navbar = () => {
     </>
   );
   return (
-    <div class="navbar border-b-[1px] py-0 border-gray-400 px-8 md:px-20">
-      <div class="navbar-start flex-1 ">
+    <div className="navbar border-b-[1px] py-0 border-gray-400 px-8 md:px-20">
+      <div className="navbar-start flex-1 ">
         <Link to="/">
           <h1 className=" text-xl font-semibold title-style w-60">
             Ed Tech Company
           </h1>
         </Link>
       </div>
-      <div class="navbar-end hidden lg:flex">
-        <ul class="menu menu-horizontal p-0 font-medium gap-4">{navMenu}</ul>
+      <div className="navbar-end hidden lg:flex">
+        <ul className="menu menu-horizontal p-0 font-medium gap-4">
+          {navMenu}
+        </ul>
       </div>
-      <div class="navbar-end flex lg:hidden">
-        <div class="dropdown dropdown-end">
-          <label tabindex="0" class="btn btn-ghost lg:hidden">
+      <div className="navbar-end flex lg:hidden">
+        <div className="dropdown dropdown-end">
+          <label tabIndex="0" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
+              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
               />
             </svg>
           </label>
           <ul
-            tabindex="0"
-            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 gap-1"
+            tabIndex="0"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 gap-1"
           >
             {navMenu}
           </ul>

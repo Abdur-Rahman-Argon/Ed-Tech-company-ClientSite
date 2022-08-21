@@ -29,7 +29,7 @@ const SocialLogIn = () => {
         SignUp with GooGle
       </button>
       <button className="btn w-full my-2 flex items-center justify-center gap-3 bg-indigo-600 text-white">
-        <i class="fa-brands fa-facebook-square text-2xl"></i> SignUp with
+        <i className="fa-brands fa-facebook-square text-2xl"></i> SignUp with
         Facebook
       </button>
     </div>

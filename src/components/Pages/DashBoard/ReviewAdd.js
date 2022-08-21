@@ -49,7 +49,7 @@ const ReviewAdd = () => {
     };
     console.log(ReviewAdd);
 
-    fetch("http://localhost:5000/publicReview", {
+    fetch("https://still-bayou-46624.herokuapp.com/publicReview", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -79,7 +79,7 @@ const ReviewAdd = () => {
                   onClick={() => handleClick(index + 1)}
                   onMouseOver={() => handleMouseHover(index + 1)}
                   onMouseLeave={() => handleMouseLave()}
-                  class={` fa-star ${
+                  className={` fa-star ${
                     (hoverValue || currentRatings) > index
                       ? "text-orange-500 fa-solid"
                       : "text-gray-500 fa-regular"

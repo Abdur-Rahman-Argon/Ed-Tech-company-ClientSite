@@ -82,7 +82,7 @@ const ContactUs = () => {
             type="submit"
             className="input text-gray-600 font-semibold text-xl input-bordered w-44"
           >
-            send <i class="fa-solid fa-paper-plane mx-2 "></i>
+            send <i className="fa-solid fa-paper-plane mx-2 "></i>
           </button>
         </div>
         <div>
