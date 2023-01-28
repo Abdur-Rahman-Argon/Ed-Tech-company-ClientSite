@@ -15,9 +15,9 @@ const CustomerReview = () => {
   const ratings = ["1", "2", "3", "4", "5"];
 
   return (
-    <div className=" w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-around items-end gap-5">
+    <div className=" w-full mx-auto grid grid-cols-1 md:grid-cols-2  justify-around items-end gap-5">
       {reviews?.map((review) => (
-        <div className="card w-[380px] p-5 bg-base-100 shadow-xl">
+        <div className="card w-full md:w-[380px] p-5 bg-base-100 shadow-xl">
           <div className="flex justify-between items-top">
             <div className="flex items-center ">
               <div className="avatar">
@@ -35,7 +35,7 @@ const CustomerReview = () => {
             <div>
               <span className=" text-lg flex gap-1 items-center">
                 {ratings.map((r, index) => (
-                  <li key={index} className=" list-none">
+                  <li key={index} className=" text-xs md:text-sm list-none">
                     <i
                       className={` fa-star ${
                         review?.ratings > index
