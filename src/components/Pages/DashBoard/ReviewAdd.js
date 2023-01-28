@@ -49,7 +49,7 @@ const ReviewAdd = () => {
     };
     console.log(ReviewAdd);
 
-    fetch("https://still-bayou-46624.herokuapp.com/publicReview", {
+    fetch("https://ed-tech-server.onrender.com/publicReview", {
       method: "POST",
       headers: {
         "content-type": "application/json",

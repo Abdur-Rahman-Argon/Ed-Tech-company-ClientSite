@@ -4,7 +4,7 @@ const CustomerReview = () => {
   const [reviews, setReviews] = useState();
 
   useEffect(() => {
-    fetch("https://still-bayou-46624.herokuapp.com/publicReview")
+    fetch("https://ed-tech-server.onrender.com/publicReview")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

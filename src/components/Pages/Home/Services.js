@@ -7,7 +7,7 @@ const Services = () => {
     isLoading,
     refetch,
   } = useQuery("product", () =>
-    fetch("https://still-bayou-46624.herokuapp.com/allService").then((res) =>
+    fetch("https://ed-tech-server.onrender.com/allService").then((res) =>
       res.json()
     )
   );

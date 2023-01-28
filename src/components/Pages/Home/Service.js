@@ -15,7 +15,7 @@ const Service = ({ Serve }) => {
       Service: Serve,
     };
     //
-    fetch("https://still-bayou-46624.herokuapp.com/carts", {
+    fetch("https://ed-tech-server.onrender.com/carts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
